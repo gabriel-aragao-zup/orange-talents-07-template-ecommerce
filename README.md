@@ -25,3 +25,5 @@ Devido ao uso do package by feature decidi utilizar a nomeclatura LayerFeature p
 Decidi utilizar a anotação @Prepersist para guardar a data de criação do usuário.
 
 # login-unico-usuario
+
+# cadastro-categoria
