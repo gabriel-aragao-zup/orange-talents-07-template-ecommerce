@@ -5,6 +5,7 @@ import org.springframework.context.MessageSource;
 import org.springframework.context.i18n.LocaleContextHolder;
 import org.springframework.http.HttpStatus;
 import org.springframework.security.core.AuthenticationException;
+import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.validation.FieldError;
 import org.springframework.web.bind.MethodArgumentNotValidException;
 import org.springframework.web.bind.annotation.ExceptionHandler;
@@ -36,6 +37,14 @@ public class ErrorHandle {
     @ResponseStatus(code = HttpStatus.BAD_REQUEST)
     @ExceptionHandler(AuthenticationException.class)
     public String handleAuthenticationException(AuthenticationException exception){
+        List<ValidationError> validationErrors = new ArrayList<>();
+        String message = exception.getMessage();
+        return message;
+    }
+
+    @ResponseStatus(code = HttpStatus.BAD_REQUEST)
+    @ExceptionHandler(UsernameNotFoundException.class)
+    public String handleAuthenticationException(UsernameNotFoundException exception){
         List<ValidationError> validationErrors = new ArrayList<>();
         String message = exception.getMessage();
         return message;
