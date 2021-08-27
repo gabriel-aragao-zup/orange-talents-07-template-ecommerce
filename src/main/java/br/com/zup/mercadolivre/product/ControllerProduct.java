@@ -1,11 +1,10 @@
 package br.com.zup.mercadolivre.product;
 
 import br.com.zup.mercadolivre.categoria.RepositoryCategory;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.WebDataBinder;
+import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
 
@@ -15,10 +14,17 @@ public class ControllerProduct {
 
     private RepositoryProduct repositoryProduct;
     private RepositoryCategory repositoryCategory;
+    @Autowired
+    private NoDuplicatedFeatureValidator noDuplicatedFeatureValidator;
 
     public ControllerProduct(RepositoryProduct repositoryProduct, RepositoryCategory repositoryCategory) {
         this.repositoryProduct = repositoryProduct;
         this.repositoryCategory = repositoryCategory;
+    }
+
+    @InitBinder
+    public void init(WebDataBinder webDataBinder){
+        webDataBinder.addValidators(noDuplicatedFeatureValidator);
     }
 
     @PostMapping
