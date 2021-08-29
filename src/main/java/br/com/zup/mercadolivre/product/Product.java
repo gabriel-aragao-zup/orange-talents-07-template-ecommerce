@@ -1,6 +1,7 @@
 package br.com.zup.mercadolivre.product;
 
 import br.com.zup.mercadolivre.categoria.Category;
+import br.com.zup.mercadolivre.user.User;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.vladmihalcea.hibernate.type.json.JsonType;
 import org.hibernate.annotations.CreationTimestamp;
@@ -9,6 +10,7 @@ import org.hibernate.annotations.TypeDef;
 
 
 import javax.persistence.*;
+import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 import java.math.BigDecimal;
 import java.time.LocalDateTime;
@@ -37,18 +39,23 @@ public class Product {
     @CreationTimestamp
     private LocalDateTime createdAt;
 
+    @ManyToOne
+    @NotNull
+    private User user;
+
     @Deprecated
     public Product() {
     }
 
     @JsonCreator(mode = JsonCreator.Mode.PROPERTIES)
-    public Product(String name, BigDecimal price, Integer quantity, List<Feature> features, String description, Category category) {
+    public Product(String name, BigDecimal price, Integer quantity, List<Feature> features, String description, Category category, User user) {
         this.name = name;
         this.price = price;
         this.quantity = quantity;
         this.features = features;
         this.description = description;
         this.category = category;
+        this.user = user;
     }
 
 

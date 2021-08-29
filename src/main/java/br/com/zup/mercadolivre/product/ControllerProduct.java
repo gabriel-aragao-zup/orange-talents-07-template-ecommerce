@@ -1,8 +1,10 @@
 package br.com.zup.mercadolivre.product;
 
 import br.com.zup.mercadolivre.categoria.RepositoryCategory;
+import br.com.zup.mercadolivre.user.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.core.annotation.AuthenticationPrincipal;
 import org.springframework.web.bind.WebDataBinder;
 import org.springframework.web.bind.annotation.*;
 
@@ -28,8 +30,9 @@ public class ControllerProduct {
     }
 
     @PostMapping
-    public ResponseEntity<?> createProduct(@RequestBody @Valid FormProduct formProduct){
-        Product product = formProduct.toModel(repositoryCategory);
+    public ResponseEntity<?> createProduct(@RequestBody @Valid FormProduct formProduct, @AuthenticationPrincipal User user){
+
+        Product product = formProduct.toModel(repositoryCategory, user);
         repositoryProduct.save(product);
         return ResponseEntity.ok().build();
     }

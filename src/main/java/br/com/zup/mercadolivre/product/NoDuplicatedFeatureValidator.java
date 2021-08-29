@@ -20,7 +20,6 @@ public class NoDuplicatedFeatureValidator implements Validator {
             return;
         }
         FormProduct formProduct = (FormProduct) o;
-        // criar um set de caracteristica a partir da lista e verificar se o tamanho é igual pra retornar o erro
         Set<Feature> featureSet = new HashSet<>(formProduct.getFeatures());
         if(featureSet.size() != formProduct.getFeatures().size()){
             errors.rejectValue("Features", null, null, "Defina caracteristicas com chaves diferentes");

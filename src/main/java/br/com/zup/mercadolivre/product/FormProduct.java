@@ -3,6 +3,7 @@ package br.com.zup.mercadolivre.product;
 import br.com.zup.mercadolivre.categoria.Category;
 import br.com.zup.mercadolivre.categoria.RepositoryCategory;
 import br.com.zup.mercadolivre.shared.config.validation.beanvalidation.existsid.ExistsId;
+import br.com.zup.mercadolivre.user.User;
 import com.fasterxml.jackson.annotation.JsonCreator;
 
 import javax.validation.constraints.*;
@@ -44,9 +45,9 @@ public class FormProduct {
         this.categoryId = categoriaId;
     }
 
-    public Product toModel(RepositoryCategory repositoryCategory){
+    public Product toModel(RepositoryCategory repositoryCategory, User user){
         Category category = repositoryCategory.findById(categoryId).get();
-        return new Product(name, price, quantity, features, description, category);
+        return new Product(name, price, quantity, features, description, category, user);
     }
 
     public String getName() {
