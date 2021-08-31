@@ -15,7 +15,9 @@ import javax.validation.constraints.Size;
 import java.math.BigDecimal;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
 @Entity
 @Table(name = "product")
@@ -43,6 +45,9 @@ public class Product {
     @NotNull
     private User user;
 
+    @ElementCollection
+    private Set<String> images = new HashSet<String>();
+
     @Deprecated
     public Product() {
     }
@@ -61,5 +66,9 @@ public class Product {
 
     public User getUser() {
         return user;
+    }
+
+    public void addImages(Set<String> images){
+        this.images.addAll(images);
     }
 }

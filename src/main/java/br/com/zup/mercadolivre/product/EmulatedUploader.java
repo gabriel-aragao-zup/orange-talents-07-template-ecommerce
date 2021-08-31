@@ -7,7 +7,7 @@ import java.util.UUID;
 import java.util.stream.Collectors;
 
 @Component
-public class EmulatedUploader {
+public class EmulatedUploader implements Uploader{
     public Set<String> send(FormImages formImages) {
         return formImages.getImages()
                 .stream()

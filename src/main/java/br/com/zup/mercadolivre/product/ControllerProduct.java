@@ -55,18 +55,19 @@ public class ControllerProduct {
         if(maybeProduct.isEmpty()){
             return ResponseEntity.badRequest().body("Product not found!");
         }
-        Product product = maybeProduct.get();
 
+        Product product = maybeProduct.get();
         User productUser = product.getUser();
 
-        if (productUser != user) {
-            return ResponseEntity.status(HttpStatus.FORBIDDEN).build();
+        if (!productUser.equals(user)) {
+            return ResponseEntity.status(HttpStatus.FORBIDDEN).body("This product does not belong to you!");
         }
 
         Set<String> links = emulatedUploader.send(formImages);
+        product.addImages(links);
+        repositoryProduct.save(product);
 
-        //  || maybeUser.get() != user
-        return ResponseEntity.ok().body(user);
+        return ResponseEntity.ok().build();
     }
 
 

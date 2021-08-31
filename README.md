@@ -31,3 +31,5 @@ Decidi utilizar a anotação @Prepersist para guardar a data de criação do usu
 # usuario-logado
 
 # cadastro-produto
+
+# produto-imagens
