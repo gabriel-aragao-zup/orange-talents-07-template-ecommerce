@@ -59,4 +59,7 @@ public class Product {
     }
 
 
+    public User getUser() {
+        return user;
+    }
 }
