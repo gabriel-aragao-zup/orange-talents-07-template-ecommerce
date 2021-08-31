@@ -5,7 +5,7 @@ public class ValidationError {
     private String campo;
     private String erro;
 
-    ValidationError(String campo, String erro){
+    public ValidationError(String campo, String erro){
         this.campo = campo;
         this.erro = erro;
     }
