@@ -68,6 +68,10 @@ public class Product {
         return user;
     }
 
+    public String getName() {
+        return name;
+    }
+
     public void addImages(Set<String> images){
         this.images.addAll(images);
     }

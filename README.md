@@ -35,3 +35,5 @@ Decidi utilizar a anotação @Prepersist para guardar a data de criação do usu
 # produto-imagens
 
 # produto-opiniao
+
+# produto-pergunta

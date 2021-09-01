@@ -35,6 +35,10 @@ public class User implements UserDetails {
         this.password = password.encript();
     }
 
+    public String getEmail() {
+        return login;
+    }
+
     @PrePersist
     private void setCreationDateTime() {
         this.createdAt = LocalDateTime.now();
