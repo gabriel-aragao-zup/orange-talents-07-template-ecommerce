@@ -1,5 +1,7 @@
-package br.com.zup.mercadolivre.product;
+package br.com.zup.mercadolivre.product.features;
 
+import br.com.zup.mercadolivre.product.FormProduct;
+import br.com.zup.mercadolivre.product.features.Feature;
 import org.springframework.stereotype.Component;
 import org.springframework.validation.Errors;
 import org.springframework.validation.Validator;

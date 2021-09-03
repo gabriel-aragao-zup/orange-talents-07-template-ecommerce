@@ -1,4 +1,4 @@
-package br.com.zup.mercadolivre.product;
+package br.com.zup.mercadolivre.product.images;
 
 import com.fasterxml.jackson.annotation.JsonCreator;
 import org.springframework.web.multipart.MultipartFile;

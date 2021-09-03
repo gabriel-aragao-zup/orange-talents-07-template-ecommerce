@@ -27,6 +27,12 @@ public class Opinion {
     @ManyToOne
     private Product product;
 
+    public Opinion() {
+    }
+
+    @Deprecated
+
+
     public Opinion(@NotNull @Size(min = 1, max = 5) Integer grade, @NotBlank String title, @NotBlank @Size(max = 500) String description, User user, Product product) {
         this.grade = grade;
         this.title = title;
@@ -38,4 +44,13 @@ public class Opinion {
     public String getTitle() {
         return title;
     }
+
+    public Integer getGrade() {
+        return grade;
+    }
+
+    public String getDescription() {
+        return description;
+    }
+
 }

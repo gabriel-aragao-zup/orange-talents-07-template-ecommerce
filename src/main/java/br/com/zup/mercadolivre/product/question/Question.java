@@ -2,6 +2,7 @@ package br.com.zup.mercadolivre.product.question;
 
 import br.com.zup.mercadolivre.product.Product;
 import br.com.zup.mercadolivre.user.User;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import org.hibernate.annotations.CreationTimestamp;
 
 import javax.persistence.*;
@@ -16,6 +17,7 @@ public class Question {
     private Long id;
     private String title;
     @CreationTimestamp
+    @JsonIgnore
     private LocalDateTime createdAt;
     @NotNull
     @ManyToOne
@@ -23,6 +25,12 @@ public class Question {
     @NotNull
     @ManyToOne
     private Product product;
+
+    public Question() {
+    }
+
+    @Deprecated
+
 
     public Question(String title, User user, Product product) {
         this.title = title;
@@ -34,19 +42,9 @@ public class Question {
         return title;
     }
 
-    public Long getId() {
-        return id;
-    }
-
     public LocalDateTime getCreatedAt() {
         return createdAt;
     }
 
-    public User getUser() {
-        return user;
-    }
 
-    public Product getProduct() {
-        return product;
-    }
 }

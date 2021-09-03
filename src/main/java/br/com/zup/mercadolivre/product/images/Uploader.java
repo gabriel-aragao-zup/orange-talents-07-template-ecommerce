@@ -1,4 +1,4 @@
-package br.com.zup.mercadolivre.product;
+package br.com.zup.mercadolivre.product.images;
 
 import java.util.Set;
 

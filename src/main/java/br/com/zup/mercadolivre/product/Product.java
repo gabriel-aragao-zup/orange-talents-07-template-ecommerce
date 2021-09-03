@@ -1,6 +1,7 @@
 package br.com.zup.mercadolivre.product;
 
 import br.com.zup.mercadolivre.categoria.Category;
+import br.com.zup.mercadolivre.product.features.Feature;
 import br.com.zup.mercadolivre.user.User;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.vladmihalcea.hibernate.type.json.JsonType;
@@ -14,7 +15,6 @@ import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 import java.math.BigDecimal;
 import java.time.LocalDateTime;
-import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
@@ -67,9 +67,39 @@ public class Product {
     public User getUser() {
         return user;
     }
-
+    public Long getId() {
+        return id;
+    }
     public String getName() {
         return name;
+    }
+
+    public BigDecimal getPrice() {
+        return price;
+    }
+
+    public Integer getQuantity() {
+        return quantity;
+    }
+
+    public List<Feature> getFeatures() {
+        return features;
+    }
+
+    public String getDescription() {
+        return description;
+    }
+
+    public Category getCategory() {
+        return category;
+    }
+
+    public LocalDateTime getCreatedAt() {
+        return createdAt;
+    }
+
+    public Set<String> getImages() {
+        return images;
     }
 
     public void addImages(Set<String> images){

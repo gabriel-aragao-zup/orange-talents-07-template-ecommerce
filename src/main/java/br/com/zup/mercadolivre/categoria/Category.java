@@ -22,6 +22,14 @@ public class Category {
         this.name = name;
     }
 
+    public String getName() {
+        return name;
+    }
+
+    public Category getMotherCategory() {
+        return motherCategory;
+    }
+
     public void setMotherCategory(Category motherCategory) {
         this.motherCategory = motherCategory;
     }

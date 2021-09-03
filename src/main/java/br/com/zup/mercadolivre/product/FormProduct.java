@@ -2,15 +2,14 @@ package br.com.zup.mercadolivre.product;
 
 import br.com.zup.mercadolivre.categoria.Category;
 import br.com.zup.mercadolivre.categoria.RepositoryCategory;
+import br.com.zup.mercadolivre.product.features.Feature;
 import br.com.zup.mercadolivre.shared.config.validation.beanvalidation.existsid.ExistsId;
 import br.com.zup.mercadolivre.user.User;
 import com.fasterxml.jackson.annotation.JsonCreator;
 
 import javax.validation.constraints.*;
 import java.math.BigDecimal;
-import java.util.ArrayList;
 import java.util.List;
-import java.util.stream.Collectors;
 
 public class FormProduct {
 

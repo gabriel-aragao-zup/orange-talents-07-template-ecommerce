@@ -1,4 +1,4 @@
-package br.com.zup.mercadolivre.product;
+package br.com.zup.mercadolivre.product.images;
 
 import org.springframework.stereotype.Component;
 
@@ -7,7 +7,7 @@ import java.util.UUID;
 import java.util.stream.Collectors;
 
 @Component
-public class EmulatedUploader implements Uploader{
+public class EmulatedUploader implements Uploader {
     public Set<String> send(FormImages formImages) {
         return formImages.getImages()
                 .stream()
