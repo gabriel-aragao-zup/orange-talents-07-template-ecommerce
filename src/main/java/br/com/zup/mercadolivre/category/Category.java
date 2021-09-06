@@ -1,4 +1,4 @@
-package br.com.zup.mercadolivre.categoria;
+package br.com.zup.mercadolivre.category;
 
 import javax.persistence.*;
 

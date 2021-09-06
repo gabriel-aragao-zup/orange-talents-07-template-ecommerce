@@ -1,7 +1,7 @@
 package br.com.zup.mercadolivre.product;
 
-import br.com.zup.mercadolivre.categoria.Category;
-import br.com.zup.mercadolivre.categoria.RepositoryCategory;
+import br.com.zup.mercadolivre.category.Category;
+import br.com.zup.mercadolivre.category.RepositoryCategory;
 import br.com.zup.mercadolivre.product.features.Feature;
 import br.com.zup.mercadolivre.shared.config.validation.beanvalidation.existsid.ExistsId;
 import br.com.zup.mercadolivre.user.User;

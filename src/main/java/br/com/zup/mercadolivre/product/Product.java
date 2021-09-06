@@ -1,6 +1,6 @@
 package br.com.zup.mercadolivre.product;
 
-import br.com.zup.mercadolivre.categoria.Category;
+import br.com.zup.mercadolivre.category.Category;
 import br.com.zup.mercadolivre.product.features.Feature;
 import br.com.zup.mercadolivre.user.User;
 import com.fasterxml.jackson.annotation.JsonCreator;
@@ -63,6 +63,13 @@ public class Product {
         this.user = user;
     }
 
+    public Boolean stockDecrease(Integer quantity) {
+        if(this.quantity>= quantity){
+            this.quantity = this.quantity-quantity;
+            return true;
+        }
+        return false;
+    }
 
     public User getUser() {
         return user;
@@ -70,6 +77,7 @@ public class Product {
     public Long getId() {
         return id;
     }
+
     public String getName() {
         return name;
     }

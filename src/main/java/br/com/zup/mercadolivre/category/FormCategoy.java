@@ -1,4 +1,4 @@
-package br.com.zup.mercadolivre.categoria;
+package br.com.zup.mercadolivre.category;
 
 import br.com.zup.mercadolivre.shared.config.validation.beanvalidation.existsidornull.ExistsIdOrNull;
 import br.com.zup.mercadolivre.shared.config.validation.beanvalidation.uniquevalue.UniqueValue;

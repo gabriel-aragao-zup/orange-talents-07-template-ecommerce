@@ -1,6 +1,6 @@
 package br.com.zup.mercadolivre.product;
 
-import br.com.zup.mercadolivre.categoria.Category;
+import br.com.zup.mercadolivre.category.Category;
 import br.com.zup.mercadolivre.product.features.Feature;
 import br.com.zup.mercadolivre.product.opinion.Opinion;
 import br.com.zup.mercadolivre.product.opinion.RepositoryOpinion;

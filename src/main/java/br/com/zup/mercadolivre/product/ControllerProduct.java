@@ -1,6 +1,6 @@
 package br.com.zup.mercadolivre.product;
 
-import br.com.zup.mercadolivre.categoria.RepositoryCategory;
+import br.com.zup.mercadolivre.category.RepositoryCategory;
 import br.com.zup.mercadolivre.product.features.NoDuplicatedFeatureValidator;
 import br.com.zup.mercadolivre.product.images.EmulatedUploader;
 import br.com.zup.mercadolivre.product.images.FormImages;

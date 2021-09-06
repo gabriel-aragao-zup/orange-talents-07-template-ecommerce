@@ -1,4 +1,4 @@
-package br.com.zup.mercadolivre.categoria;
+package br.com.zup.mercadolivre.category;
 
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PostMapping;
