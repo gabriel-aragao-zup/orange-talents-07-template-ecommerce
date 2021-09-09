@@ -10,6 +10,7 @@ public class EmailPurchase implements Email {
     private String subject;
 
 
+
     public EmailPurchase(Purchase purchase) {
         this.from = purchase.getBuyer().getEmail();
         this.to = purchase.getProduct().getUser().getEmail();

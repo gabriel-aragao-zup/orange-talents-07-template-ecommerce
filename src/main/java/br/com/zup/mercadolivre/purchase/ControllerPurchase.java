@@ -57,7 +57,7 @@ public class ControllerPurchase {
         }
 
         URI uri = ServletUriComponentsBuilder.fromHttpUrl(formPurchase.getGateway().getUrl())
-                .path("{id}&redirectUrl=urlRetornoAppPosPagamento")
+                .path("{id}&redirectUrl=/payment"+formPurchase.getGateway().getUrlRetorno())
                 .buildAndExpand(purchase.getId().toString()).toUri();
         return ResponseEntity.status(HttpStatus.FOUND).location(uri).build();
     }

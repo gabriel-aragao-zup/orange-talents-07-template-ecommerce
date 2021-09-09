@@ -24,6 +24,10 @@ public class Purchase {
     @Enumerated(EnumType.STRING)
     private Status status;
 
+    @Deprecated
+    public Purchase() {
+    }
+
     public Purchase(Product product, Integer quantity, User buyer, Gateway gateway) {
         this.product = product;
         this.quantity = quantity;
@@ -47,5 +51,19 @@ public class Purchase {
 
     public Integer getQuantity() {
         return quantity;
+    }
+
+    public Gateway getGateway() {
+        return gateway;
+    }
+
+    public Status getStatus() {
+        return status;
+    }
+
+    public void setStatus(Status status) {
+        if(this.status != Status.PAGAMENTO_REALIZADO){
+            this.status = status;
+        }
     }
 }

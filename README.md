@@ -41,3 +41,5 @@ Decidi utilizar a anotação @Prepersist para guardar a data de criação do usu
 # produto-detalhe
 
 # compra-1
+
+# compra-2
